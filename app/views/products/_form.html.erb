@@ -19,9 +19,12 @@
 	<br>
 
 	<div class="field">
-		<%= f.fields_for :pics do |builder| %>
+		<%= f.fields_for :pics, html: { multipart: true, class: "dropzone"} do |builder| %>
 			<%= builder.label :url %>
 			<%= builder.text_field :url %>
+			<br>
+			<%= builder.label :image %>
+			<%= builder.file_field :image %>
 		<% end %>
 	</div>
 
